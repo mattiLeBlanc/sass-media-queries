@@ -1,0 +1,73 @@
+// fallback scale. Override in your code using $media-scale: ( 0, 400px...)
+
+$scale: ( 0, 600px, 768px, 1024px, 1280px);
+
+@mixin between( $min, $max ) {
+  @if variable-exists(media-scale){
+    $scale: $media-scale!global;
+  }
+  @if ( $min >= 1 and $min <= length($scale) ) and ( $max >= 1 and $max <= length($scale) ) {
+    $condition:   '';
+    $from:        nth($scale, $min );
+    $to:          nth($scale, $max );
+    $condition:   $condition + '( min-width: #{$from} )';
+    $condition:   $condition + 'and ( max-width: #{$to} )';
+
+    @media only screen and #{$condition} {
+      @content;
+    }
+  } @else {
+    @error "Media query issue: unknown breakpoint indexes #{$min} - #{$max}";
+  }
+}
+
+@mixin from-width( $min ) {
+  @if $media-scale {
+    $scale: $media-scale;
+  }
+  @if $min < length($scale) {
+    $condition:   '';
+    $from:        nth($scale, $min );
+    $condition:   $condition + '( min-width: #{$from} )';
+
+    @media only screen and #{$condition} {
+      @content;
+    }
+  } @else {
+    @error "Media query issue: unknown breakpoint #{min}";
+  }
+}
+
+@mixin to-width( $max ) {
+  @if $media-scale {
+    $scale: $media-scale;
+  }
+  @if $max > 1 {
+    $condition:   '';
+    $from:        nth($scale, $max );
+    $condition:   $condition + '( max-width: #{$from}-1 )';
+
+    @media only screen and #{$condition} {
+      @content;
+    }
+  } @else {
+    @error "Media query issue: unknown breakpoint #{min}";
+  }
+}
+@mixin at( $max ) {
+  @if $media-scale {
+    $scale: $media-scale;
+  }
+  @if $max >= 1 and $max <= length($scale) {
+    $condition:   '';
+    $from:        nth($scale, $max );
+    $condition:   $condition + '( min-width: #{$from} ) and ( max-width: #{$from} )';
+
+    @media only screen and #{$condition} {
+      @content;
+    }
+  } @else {
+    @error "Media query issue: unknown breakpoint #{max}";
+  }
+}
+
