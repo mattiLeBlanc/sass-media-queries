@@ -32,6 +32,21 @@ Sass: `+at(1,2)`
 
 Scss: `@include at(1,2)`
 
+
+Examples
+------------------------------
+    .body
+      color: red
+      +from(3)
+        color: blue
+
+      p
+        font-size: 12px;
+
+        +between(3,5)
+          font-size: 16px;
+
+
 Override breakpoint definition
 ------------------------------
 Add the following override to your main sass file (root level where you import the mixins):
