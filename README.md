@@ -1,6 +1,7 @@
 sass-media-queries
 ==================
 **Content**
+
 Easy mixins for sass based on Rupture (stylus).
 
 Add the media.sass to your project and include into your main sass or scss file to start using the convenient mixins.
@@ -8,21 +9,25 @@ Add the media.sass to your project and include into your main sass or scss file 
 Mixins
 ------
 **Between( start, end )**
+
 Sass: `+between(1,2)`
 
 Scss: `@include between(1,2)`
 
 **from( start )**
+
 Sass: `+from(1)`
 
 Scss: `@include from(1)`
 
 **to( end )**
+
 Sass: `+to(3)`
 
 Scss: `@include to(3)`
 
 **at( start, end )**
+
 Sass: `+at(1,2)`
 
 Scss: `@include at(1,2)`
