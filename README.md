@@ -9,18 +9,22 @@ Mixins
 ------
 **Between( start, end )**
 Sass: `+between(1,2)`
+
 Scss: `@include between(1,2)`
 
 **from( start )**
 Sass: `+from(1)`
+
 Scss: `@include from(1)`
 
 **to( end )**
 Sass: `+to(3)`
+
 Scss: `@include to(3)`
 
 **at( start, end )**
 Sass: `+at(1,2)`
+
 Scss: `@include at(1,2)`
 
 Override breakpoint definition
@@ -35,4 +39,5 @@ This will force the mixins to use your definition;
 Change log
 ----------
 Version 1.0
+
 *First  version of mixin definition*
