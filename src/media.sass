@@ -3,7 +3,7 @@
 $scale: ( 0, 600px, 768px, 1024px, 1280px);
 
 @mixin between( $min, $max ) {
-  @if variable-exists(media-scale){
+  @if variable-exists(media-scale) {
     $scale: $media-scale!global;
   }
   @if ( $min >= 1 and $min <= length($scale) ) and ( $max >= 1 and $max <= length($scale) ) {
@@ -19,10 +19,11 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
   } @else {
     @error "Media query issue: unknown breakpoint indexes #{$min} - #{$max}";
   }
+
 }
 
 @mixin from( $min ) {
-  @if $media-scale {
+  @if variable-exists(media-scale) {
     $scale: $media-scale;
   }
   @if $min < length($scale) {
@@ -39,7 +40,7 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
 }
 
 @mixin to( $max ) {
-  @if $media-scale {
+  @if variable-exists(media-scale) {
     $scale: $media-scale;
   }
   @if $max > 1 {
@@ -55,13 +56,14 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
   }
 }
 @mixin at( $max ) {
-  @if $media-scale {
+  @if variable-exists(media-scale) {
     $scale: $media-scale;
   }
-  @if $max >= 1 and $max <= length($scale) {
+  @if $max >= 1 and $max <= length($scale)-1 {
     $condition:   '';
     $from:        nth($scale, $max );
-    $condition:   $condition + '( min-width: #{$from} ) and ( max-width: #{$from} )';
+    $to:        nth($scale, $max+1 );
+    $condition:   $condition + '( min-width: #{$from} ) and ( max-width: #{$to}-1 )';
 
     @media only screen and #{$condition} {
       @content;

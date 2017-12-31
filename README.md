@@ -58,6 +58,10 @@ This will force the mixins to use your definition;
 
 Change log
 ----------
+Version 1.1
+
+*Fixed `at` mixin and correct bug with $media-scale variable
+
 Version 1.0
 
 *First  version of mixin definition*
