@@ -46,7 +46,7 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
   @if $max > 1 {
     $condition:   '';
     $from:        nth($scale, $max );
-    $condition:   $condition + '( max-width: #{$from}-1 )';
+    $condition:   $condition + '( max-width: #{($from)-1} )';
 
     @media only screen and #{$condition} {
       @content;
@@ -63,7 +63,7 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
     $condition:   '';
     $from:        nth($scale, $max );
     $to:        nth($scale, $max+1 );
-    $condition:   $condition + '( min-width: #{$from} ) and ( max-width: #{$to}-1 )';
+    $condition:   $condition + '( min-width: #{$from} ) and ( max-width: #{($to)-1} )';
 
     @media only screen and #{$condition} {
       @content;
