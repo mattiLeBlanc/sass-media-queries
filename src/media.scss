@@ -2,10 +2,11 @@
 
 $scale: ( 0, 600px, 768px, 1024px, 1280px);
 
-@mixin between( $min, $max ) {
-  @if variable-exists(media-scale) {
+@if variable-exists(media-scale) {
     $scale: $media-scale!global;
   }
+
+@mixin between( $min, $max ) {
   @if ( $min >= 1 and $min <= length($scale) ) and ( $max >= 1 and $max <= length($scale) ) {
     $condition:   '';
     $from:        nth($scale, $min );
@@ -19,18 +20,12 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
   } @else {
     @error "Media query issue: unknown breakpoint indexes #{$min} - #{$max}";
   }
-
 }
-
 @mixin from( $min ) {
-  @if variable-exists(media-scale) {
-    $scale: $media-scale;
-  }
   @if $min < length($scale) {
     $condition:   '';
     $from:        nth($scale, $min );
     $condition:   $condition + '( min-width: #{$from} )';
-
     @media only screen and #{$condition} {
       @content;
     }
@@ -38,16 +33,11 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
     @error "Media query issue: unknown breakpoint #{min}";
   }
 }
-
 @mixin to( $max ) {
-  @if variable-exists(media-scale) {
-    $scale: $media-scale;
-  }
   @if $max > 1 {
     $condition:   '';
     $from:        nth($scale, $max );
     $condition:   $condition + '( max-width: #{($from)-1} )';
-
     @media only screen and #{$condition} {
       @content;
     }
@@ -56,15 +46,11 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
   }
 }
 @mixin at( $max ) {
-  @if variable-exists(media-scale) {
-    $scale: $media-scale;
-  }
   @if $max >= 1 and $max <= length($scale)-1 {
     $condition:   '';
     $from:        nth($scale, $max );
     $to:        nth($scale, $max+1 );
     $condition:   $condition + '( min-width: #{$from} ) and ( max-width: #{($to)-1} )';
-
     @media only screen and #{$condition} {
       @content;
     }
@@ -72,4 +58,3 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
     @error "Media query issue: unknown breakpoint #{max}";
   }
 }
-
