@@ -1,10 +1,13 @@
 sass-media-queries
 ==================
-**Content**
+**Description**
 
 Easy mixins for sass based on Rupture (stylus).
 
 Add the media.sass to your project and include into your main sass or scss file to start using the convenient mixins.
+------------------------------
+    @import "(../)node_modules/sassy-media-queries/src/media.scss";
+------------------------------
 
 Mixins
 ------

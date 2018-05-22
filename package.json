@@ -1,0 +1,23 @@
+{
+  "name": "sassy-media-queries",
+  "version": "1.1.1",
+  "description": "Sass Media Query Mixins based on Rupture",
+  "main": "src/media.sass",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattiLeBlanc/sass-media-queries.git"
+  },
+  "keywords": [
+    "media-queries",
+    "sass"
+  ],
+  "author": "Matti Leblanc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattiLeBlanc/sass-media-queries/issues"
+  },
+  "homepage": "https://github.com/mattiLeBlanc/sass-media-queries#readme"
+}
