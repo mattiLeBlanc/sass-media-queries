@@ -6,8 +6,12 @@ Easy mixins for sass based on Rupture (stylus).
 
 Add the media.sass to your project and include into your main sass or scss file to start using the convenient mixins.
 ------------------------------
-    @import "(../)node_modules/sassy-media-queries/src/media.scss";
-------------------------------
+
+> install via npm: `$ npm i sassy-media-queries -D`
+then import in your main SASS/SCSS responsiveness.scss file.
+`@import "(../)node_modules/sassy-media-queries/src/media.scss";`
+
+For best practice I recommend including an import of your `responsiveness.sscs` on each page that requires the use of breakpoints.
 
 Mixins
 ------
