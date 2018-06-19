@@ -1,4 +1,4 @@
-sass-media-queries
+sassy-media-queries
 ==================
 **Description**
 
@@ -17,11 +17,21 @@ Sass: `+between(1,2)`
 
 Scss: `@include between(1,2)`
 
+> **For example**
+> `@include between(2,4)`
+> Based on a breakpoint scale of 0, 600px, 768px, 1024px, 1280px this would generate the following media query:
+> `(max-width: 1023px) and (min-width: 600px)`
+
 **from( start )**
 
 Sass: `+from(1)`
 
 Scss: `@include from(1)`
+
+> **For example**
+> `@include from(4)`
+> Based on a breakpoint scale of 0, 600px, 768px, 1024px, 1280px this would generate the following media query:
+> `(min-width: 1024px)`
 
 **to( end )**
 
@@ -29,11 +39,21 @@ Sass: `+to(3)`
 
 Scss: `@include to(3)`
 
+> **For example**
+> `@include to(4)`
+> Based on a breakpoint scale of 0, 600px, 768px, 1024px, 1280px this would generate the following media query:
+> `(max-width: 1023px)`
+
 **at( start, end )**
 
-Sass: `+at(1,2)`
+Sass: `+at(1)`
 
-Scss: `@include at(1,2)`
+Scss: `@include at(1)`
+
+> **For example**
+> `@include from(4)`
+> Based on a breakpoint scale of 0, 600px, 768px, 1024px, 1280px this would generate the following media query:
+> `(max-width: 599px) and (min-width: 0)`
 
 
 Examples
