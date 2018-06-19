@@ -12,7 +12,7 @@ $scale: ( 0, 600px, 768px, 1024px, 1280px);
     $from:        nth($scale, $min );
     $to:          nth($scale, $max );
     $condition:   $condition + '( min-width: #{$from} )';
-    $condition:   $condition + 'and ( max-width: #{$to} )';
+    $condition:   $condition + 'and ( max-width: #{($to)-1} )';
 
     @media only screen and #{$condition} {
       @content;

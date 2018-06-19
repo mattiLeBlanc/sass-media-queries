@@ -1,6 +1,6 @@
 {
   "name": "sassy-media-queries",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Sass Media Query Mixins based on Rupture",
   "main": "src/media.sass",
   "scripts": {
